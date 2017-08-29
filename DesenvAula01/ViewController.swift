@@ -27,11 +27,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if textField == tfName{
             tfEmail.becomeFirstResponder()
         }else if textField == tfEmail{
+            if textField.text == ""{
+                return false
+            }
+            
             tfPassword.becomeFirstResponder()
         }else{
             doSignUp()
         }
         
+        return true
+    }
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField == tfEmail && textField.text == ""{
+            return false
+        }
         return true
     }
     @IBAction func doSignUp() {
