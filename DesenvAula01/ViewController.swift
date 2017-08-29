@@ -29,10 +29,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }else if textField == tfEmail{
             tfPassword.becomeFirstResponder()
         }else{
-            tfPassword.resignFirstResponder()
+            doSignUp()
         }
         
         return true
+    }
+    @IBAction func doSignUp() {
+        print("Fazendo o cadastro")
+         view.endEditing(true)
     }
 
 }

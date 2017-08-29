@@ -55,6 +55,9 @@
                                 <state key="normal" title="Sign-Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="doSignUp" destination="BYZ-38-t0r" eventType="touchUpInside" id="MZj-t5-gdY"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3HZ-4o-s6H">
                                 <rect key="frame" x="21" y="65" width="279" height="30"/>
