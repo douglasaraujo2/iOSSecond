@@ -13,9 +13,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tfName: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var ivAvatar: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ivAvatar.image = UIImage(named: "avatarBig")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -40,10 +42,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField == tfEmail && textField.text == ""{
+            
             return false
         }
         return true
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.lowercased() == "a"{
+            return false
+        }else{
+            return true
+        }
+    }
+    
+    
+    
+    
     @IBAction func doSignUp() {
         print("Fazendo o cadastro")
          view.endEditing(true)
