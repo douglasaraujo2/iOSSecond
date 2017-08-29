@@ -8,20 +8,32 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var tfNumber: UITextField!
+    @IBOutlet weak var tfName: UITextField!
+    @IBOutlet weak var tfEmail: UITextField!
+    @IBOutlet weak var tfPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        tfNumber.resignFirstResponder()
         view.endEditing(true)
     }
    
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == tfName{
+            tfEmail.becomeFirstResponder()
+        }else if textField == tfEmail{
+            tfPassword.becomeFirstResponder()
+        }else{
+            tfPassword.resignFirstResponder()
+        }
+        
+        return true
+    }
 
 }
 
